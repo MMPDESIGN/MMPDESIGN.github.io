@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Website</title>
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Nav -->
+      <div class="nav container">
+        <!-- Menu Icon -->
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <!-- Logo -->
+        <a href="index.html" class="logo">HA Stone Design Services</a>
+        <!-- Navbar -->
+        <div class="navbar">
+          <a href="index.html#products" class="nav-link">Stone Fireplaces</a>
+          <a href="index.html#products" class="nav-link">Custom Stone Exteriors</a>
+          <a href="#" class="nav-link">Transitional</a>
+          <a href="#" class="nav-link">Firewood Place Accessories</a>
+        </div>
+        <!-- Cart-Icon -->
+        <a href="cart.html">
+          <i class="bx bx-shopping-bag" id="cart-icon" data-quantity="0"></i>
+        </a>
+      </div>
+    </header>
+  <!-- Home -->
+  <img width="1778" height="926" src="https://riceboxed.com/wp-content/uploads/2023/04/Rectangle-147.png" class="attachment-full size-full wp-image-137" alt="" srcset="https://riceboxed.com/wp-content/uploads/2023/04/Rectangle-147.png 1778w, https://riceboxed.com/wp-content/uploads/2023/04/Rectangle-147-300x156.png 300w, https://riceboxed.com/wp-content/uploads/2023/04/Rectangle-147-1024x533.png 1024w, https://riceboxed.com/wp-content/uploads/2023/04/Rectangle-147-768x400.png 768w, https://riceboxed.com/wp-content/uploads/2023/04/Rectangle-147-1536x800.png 1536w" sizes="(max-width: 1778px) 100vw, 1778px">
+<section class="home" id="home" style="width: 100%; position: relative; display: flex; overflow: hidden; height: 100vh;">
+  <div class="home-carousel" style="display: flex; transition: transform 0.5s ease-in-out; width: 100%; height: 100%;">
+    <div class="carousel-slide" style="flex: 0 0 100%; height: 100%; position: relative;">
+      <img src="images/1.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
+    </div>
+    <div class="carousel-slide" style="flex: 0 0 100%; height: 100%; position: relative;">
+      <img src="images/2.png" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
+    </div>
+    <div class="carousel-slide" style="flex: 0 0 100%; height: 100%; position: relative;">
+      <img src="images/3.png" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover; position: absolute;">
+    </div>
+  </div>
+  <button id="prev-slide" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 1.5rem; padding: 10px; cursor: pointer;">❮</button>
+  <button id="next-slide" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: white; border: none; font-size: 1.5rem; padding: 10px; cursor: pointer;">❯</button>
+</section>
+1
+
+
+    <!-- Products -->
+    <section class="products container" id="products">
+      <!-- Heading -->
+      <h2 class="heading">HA Design Services</h2>
+      <!-- Products Container -->
+      <div class="product-container" id="productList"></div>
+    </section>
+    <!-- Footer -->
+    <div class="footer" id="footer">
+      <div class="footer-c container">
+        <div class="footer-box">
+          <h2>HA Stone Services</h2>
+          <div class="social">
+            <a href="#"><i class="bx bxl-pinterest-alt"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-whatsapp"></i></a>
+            <a href="#"><i class="bx bxl-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-box">
+          <h3>Help</h3>
+          <a href="#">Contact Us</a>
+          <a href="#">Faq</a>
+          <a href="#">Shipment</a>
+          <a href="#">Payment</a>
+          <a href="#">Track Your Order</a>
+          <a href="#">Return Your Order</a>
+        </div>
+        <div class="footer-box">
+          <h3>Legal Info</h3>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Condition</a>
+          <a href="#">Return Policy</a>
+          <a href="#">Comunity</a>
+          <a href="#">Get Card</a>
+        </div>
+      </div>
+      <p class="copyright container">&#169 HA Design Stone Design </p>
+    </div>
+    <!-- Link To JS -->
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/corousel.js"></script>
+    <script>
+      // Check if carousel slides are being selected correctly
+      document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelectorAll('.carousel-slide');
+        console.log('Carousel Slides:', slides); // Log all the slides to check if they're being selected
+    
+        // Log visibility of each image
+        slides.forEach((slide, index) => {
+          const image = slide.querySelector('img');
+          console.log(`Slide ${index + 1} Image src:`, image ? image.src : 'No image found');
+        });
+    
+        // You can also log when the 'active' class is being added
+        let currentSlideIndex = 0;
+        function showSlide() {
+          slides.forEach((slide, index) => {
+            if (index === currentSlideIndex) {
+              slide.classList.add('active');
+              console.log(`Slide ${index + 1} is now active`);
+            } else {
+              slide.classList.remove('active');
+            }
+          });
+        }
+    
+        // Show the first slide as an example
+        showSlide();
+      });
+    </script>
+    
+  </body>
+</html>
